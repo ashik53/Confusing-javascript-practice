@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+
+    <h2> Javascript <span style="color:red">confusing</span> matters practice from programming pata </h2>
+
+    <script>
+        
+        /* block vs function scope*/
+
+        testFunc();
+
+        function testFunc(){
+            
+            var a = 1;
+
+            if(true){
+                var b = 2;
+                console.log(a, b);
+            }
+
+            console.log(b);
+
+        } // function
+
+        /* hoisting*/
+        
+        console.log("hoising")
+        
+        function hoist(){
+            console.log(a);
+            var a = 10;
+        }
+
+        hoist();
+
+        /* functions */
+        console.log("functions");
+        
+        var a = function(){}
+
+        a.prop = function(){
+            console.log('say hello');
+        }
+
+        console.log(typeof a); // it would print 'function'
+        console.log(typeof a.prop); //it would print 'function'
+        console.log(a.prop()); // it would print 'say hello'
+
+        console.log("------Arrays--------");
+
+        var a = [] //an empty array
+
+        a[0] = 10;
+        a[1] = 20;
+        a[10] = 30;
+
+        console.log(a.length); //it will print '11'
+
+        for(data in a){
+            console.log(data, a[data]);
+        }
+        
+        a.length = 100;
+        console.log(a.length); //it will print '100'
+
+    </script>
+
+</body>
+
+</html>

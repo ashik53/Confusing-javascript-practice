@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+
+    <h2> Javascript <span style="color:red">confusing</span> matters practice from codemarshal </link</h2>
+
+    <script>
+        /* hoisting practice*/
+        
+        //option 1
+        name="who cares";
+        console.log("i am " + name);
+        var name; // will take the previous value
+        console.log("i am "+ name);
+        name="who cares again"; //take current value
+        console.log("i am "+ name);
+
+        //option 2
+        var name2;
+        console.log("I am "+name2);
+        name2 ="who cares"; //take current value
+        console.log("I am "+name2)
+
+        //option 3 with let & const
+        
+        //let
+       // console.log(name3) //throw error
+       let name3 = "who cares 4"
+
+        //const
+       // console.log(name4); //throw error
+        const name4= "who cares 4"
+
+
+        /* confusing matters about function */
+        
+        hello("who cares");
+        function hello(name){
+            console.log("Hello "+ name) 
+        }
+
+        // hello2("I cares"); //throw error
+        // var hello2 = function(name){ 
+        //     console.log("Hello " + name);
+        // }
+
+        /* what is function that is object in javascript */
+        
+        console.log("what is function that is object in javascript");
+        var func = function(name){
+            console.log("Hello " + name);
+        }
+        func("function called");
+
+        //add varaible to previous function like object
+        func.world = " this world is for good people";
+        console.log(func.world);
+
+        console.log("----return a function from another function-----");
+
+        function trustMeIAmObject(){
+            function okThenReturnMe(){
+                console.log("I am a function and I am also an object");
+            }
+            return okThenReturnMe; //call previous function
+        }
+
+        let areYouAnObject = trustMeIAmObject();//make object
+
+
+
+
+    </script>
+
+</body>
+
+</html>
